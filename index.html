@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="p-text">Delete Your Git Repository</p>
+    <input type="text" name="" id="confirm-text" placeholder="please write delete">
+    <button id="delete-btn" disabled>Delete</button>
+    <script>
+        document.getElementById('delete-btn').addEventListener('click',function(){
+            const pText = document.getElementById('p-text');
+            pText.style.display = 'none';
+        })
+        document.getElementById('confirm-text').addEventListener('keyup',function(event){
+            const deleteBtn = document.getElementById('delete-btn');
+            if(event.target.value === 'delete'){
+                deleteBtn.removeAttribute('disabled');
+            }
+            else{
+                deleteBtn.setAttribute('disabled',true);
+            } 
+        })
+        
+    </script>
+</body>
+</html>
